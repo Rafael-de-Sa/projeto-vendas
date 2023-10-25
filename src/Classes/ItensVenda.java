@@ -8,13 +8,13 @@ package Classes;
  *
  * @author rafae
  */
-public class ItensdeCompra {
+public class ItensVenda {
 
     private Produto produto;
     private int quantidade;
-    private double valorUnitario;
-    private double valorTotal;
-    protected Compras compra;
+    private int valorUnitario;
+    private int valorTotal;
+    protected Vendas venda;
 
     public Produto getProduto() {
         return produto;
@@ -32,28 +32,28 @@ public class ItensdeCompra {
         this.quantidade = quantidade;
     }
 
-    public double getValorUnitario() {
+    public int getValorUnitario() {
         return valorUnitario;
     }
 
-    public void setValorUnitario(double valorUnitario) {
+    public void setValorUnitario(int valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
 
-    public double getValorTotal() {
+    public int getValorTotal() {
         return valorTotal;
     }
 
-    public void setValorTotal(double valorTotal) {
+    public void setValorTotal(int valorTotal) {
         this.valorTotal = valorTotal;
     }
 
-    public Compras getCompra() {
-        return compra;
+    public Vendas getVenda() {
+        return venda;
     }
 
-    public void setCompra(Compras compra) {
-        this.compra = compra;
+    public void setVenda(Vendas venda) {
+        this.venda = venda;
     }
 
 }
