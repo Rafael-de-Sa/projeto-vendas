@@ -2,28 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Classes;
+package projetovendas.model;
 
-import Interfaces.*;
+import projetovendas.interfaces.IOperacao;
+import projetovendas.interfaces.IPesquisar;
 
 /**
  *
  * @author rafae
  */
-public class Cliente extends Pessoa implements IPesquisa {
+public class Cliente extends Pessoa implements IOperacao, IPesquisar {
 
     private double renda;
     private int status;
     private String localDeTrabalho;
     private Pessoa pessoa;
-
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
 
     public double getRenda() {
         return renda;
@@ -49,9 +42,22 @@ public class Cliente extends Pessoa implements IPesquisa {
         this.localDeTrabalho = localDeTrabalho;
     }
 
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
     @Override
-    public void pesquisar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public String toString() {
+        return "Cliente{" + "renda=" + renda + ", status=" + status + ", localDeTrabalho=" + localDeTrabalho + ", pessoa=" + pessoa + '}';
+    }
+
+    @Override
+    public Pessoa pesquisar() {
+        return new Cliente();
     }
 
 }

@@ -2,14 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package Interfaces;
+package projetovendas.interfaces;
 
 /**
  *
  * @author rafae
  */
-public interface IPesquisa {
+public interface IOperacao {
 
-    public void pesquisar();
+    public void cadastrar();
 
+    public boolean alterar();
+
+    public boolean excluir();
+
+    public void cancelar();
 }

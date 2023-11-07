@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Classes;
+package projetovendas.model;
 
-import Interfaces.*;
+import projetovendas.interfaces.IOperacao;
+import projetovendas.interfaces.IPesquisar;
 
 /**
  *
  * @author rafae
  */
-public class Funcionario extends Pessoa implements IPesquisa {
+public class Funcionario extends Pessoa implements IPesquisar, IOperacao {
 
     private String cargo;
     private double comissao;
@@ -19,14 +20,6 @@ public class Funcionario extends Pessoa implements IPesquisa {
     private String funcao;
     private int status;
     private Pessoa pessoa;
-
-    public Pessoa getPessoa() {
-        return pessoa;
-    }
-
-    public void setPessoa(Pessoa pessoa) {
-        this.pessoa = pessoa;
-    }
 
     public String getCargo() {
         return cargo;
@@ -76,8 +69,22 @@ public class Funcionario extends Pessoa implements IPesquisa {
         this.status = status;
     }
 
-    @Override
-    public void pesquisar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Pessoa getPessoa() {
+        return pessoa;
     }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" + "cargo=" + cargo + ", comissao=" + comissao + ", dataAdmissao=" + dataAdmissao + ", dataDemissao=" + dataDemissao + ", funcao=" + funcao + ", status=" + status + ", pessoa=" + pessoa + '}';
+    }
+
+    @Override
+    public Pessoa pesquisar() {
+        return new Funcionario();
+    }
+
 }

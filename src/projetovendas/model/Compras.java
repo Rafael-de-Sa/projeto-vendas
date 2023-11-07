@@ -2,21 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Classes;
+package projetovendas.model;
 
-import Interfaces.IInterface;
+import projetovendas.interfaces.IOperacao;
 
 /**
  *
  * @author rafae
  */
-public class Compras implements IInterface {
+public class Compras implements IOperacao {
 
     private int data;
     private int hora;
     private int produtosComprados;
     private int valorTotal;
-    private Fornecedor fornecedor;
+    private int status;
+    private Fornecedor fornacedor;
 
     public int getData() {
         return data;
@@ -50,31 +51,43 @@ public class Compras implements IInterface {
         this.valorTotal = valorTotal;
     }
 
-    public Fornecedor getFornecedor() {
-        return fornecedor;
+    public int getStatus() {
+        return status;
     }
 
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public Fornecedor getFornacedor() {
+        return fornacedor;
+    }
+
+    public void setFornacedor(Fornecedor fornacedor) {
+        this.fornacedor = fornacedor;
+    }
+
+    @Override
+    public String toString() {
+        return "Compras{" + "data=" + data + ", hora=" + hora + ", produtosComprados=" + produtosComprados + ", valorTotal=" + valorTotal + ", status=" + status + ", fornacedor=" + fornacedor + '}';
     }
 
     @Override
     public void cadastrar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public void alterar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean alterar() {
+        return false;
     }
 
     @Override
-    public void excluir() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean excluir() {
+        return false;
     }
 
     @Override
     public void cancelar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
 }
