@@ -13,7 +13,7 @@ import projetovendas.interfaces.IOperacao;
 public class Cidade implements IOperacao {
 
     private String nome;
-    private int codibge;
+    private int codIbge;
 
     @Override
     public void cadastrar() {
@@ -38,7 +38,7 @@ public class Cidade implements IOperacao {
 
     @Override
     public String toString() {
-        return "Cidade{" + "nome=" + nome + ", codibge=" + codibge + '}';
+        return "Cidade{" + "nome=" + nome + ", codibge=" + codIbge + '}';
     }
 
     public String getNome() {
@@ -50,11 +50,11 @@ public class Cidade implements IOperacao {
     }
 
     public int getCodibge() {
-        return codibge;
+        return codIbge;
     }
 
     public void setCodibge(int codibge) {
-        this.codibge = codibge;
+        this.codIbge = codibge;
     }
 
 }
