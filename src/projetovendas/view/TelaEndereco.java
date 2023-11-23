@@ -23,6 +23,7 @@ public class TelaEndereco extends javax.swing.JFrame {
 
     public TelaEndereco() {
         initComponents();
+        this.setTitle("Cadastro Endereço");
         enderecoController = new EnderecoController();
         montaCombo();
     }
@@ -109,11 +110,6 @@ public class TelaEndereco extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTFLogradouro)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jCCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTFBairro))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -121,18 +117,21 @@ public class TelaEndereco extends javax.swing.JFrame {
                                 .addComponent(jLabel2)
                                 .addGap(143, 143, 143)
                                 .addComponent(jLabel3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jTFLogradouro)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jCCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTFBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jBCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBAlterar, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jBCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBCancelar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBExcluir)
-                .addGap(18, 18, 18)
-                .addComponent(jBAlterar)
-                .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,6 +156,8 @@ public class TelaEndereco extends javax.swing.JFrame {
                     .addComponent(jBAlterar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jBAlterar, jBCadastrar, jBCancelar, jBExcluir});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -186,11 +187,24 @@ public class TelaEndereco extends javax.swing.JFrame {
         enderecoController.getEndereco().setBairro(jTFBairro.getText());
         enderecoController.getEndereco().setLogradouro(jTFLogradouro.getText());
         enderecoController.cadastrar();
+
+        System.out.println("O endereço é: " + enderecoController.getEndereco());
+
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     private void jTFBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFBairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFBairroActionPerformed
+
+    private void limpar() {
+        jTFLogradouro.setText("");
+        jTFBairro.setText("");
+    }
+
+    private void excluir() {
+        enderecoController.excluir();
+        System.out.println("O endereço é: " + enderecoController.getEndereco());
+    }
 
     /**
      * @param args the command line arguments

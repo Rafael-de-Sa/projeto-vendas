@@ -15,4 +15,5 @@ public abstract class BancoDeDados {
 
     public static List<Cidade> listaCidades = new ArrayList();
 
+    public static List<Endereco> listaEnderecos = new ArrayList();
 }
