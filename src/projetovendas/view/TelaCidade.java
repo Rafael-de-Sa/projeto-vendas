@@ -5,6 +5,7 @@
 package projetovendas.view;
 
 import projetovendas.controller.CidadeController;
+import projetovendas.model.BancoDeDados;
 import projetovendas.model.Cidade;
 
 /**
@@ -146,6 +147,12 @@ public class TelaCidade extends javax.swing.JFrame {
         System.out.println("A cidade é: " + cidadeController.getCidade());
 
         limpar();
+
+        /*Teste se est[a salvando no ArrayList
+        for (int x = 0; x < BancoDeDados.listaCidades.size(); x++) {
+            System.out.println(BancoDeDados.listaCidades.get(x).getNome());
+        }*/
+
     }//GEN-LAST:event_jBCadastrarActionPerformed
 
     private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
@@ -156,6 +163,7 @@ public class TelaCidade extends javax.swing.JFrame {
         System.out.println("A cidade é: " + cidadeController.getCidade());
 
         excluir();
+        cidadeController.cadastrar();
     }//GEN-LAST:event_jBExcluirActionPerformed
 
     private void limpar() {

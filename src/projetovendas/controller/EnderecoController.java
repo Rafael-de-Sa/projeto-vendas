@@ -27,11 +27,21 @@ public class EnderecoController implements IOperacao {
 
     @Override
     public boolean excluir() {
+        endereco = null;
         return false;
     }
 
     @Override
     public void cancelar() {
+        endereco.cancelar();
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
 }
